@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 User Login Response Shape
+
+  p The API login endpoint will be modified to include a user's permissions
+
+  each user in userPermissions
+    div(style="float: left; margin: 1rem; padding: 1rem; background: #eee")
+      h2= user.user
+      h3= user.roles
+      h3= user.organization
+      ul
+        each permission in user.permissions
+          li= permission
+      pre= user.json
+      
+      
