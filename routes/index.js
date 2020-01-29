@@ -2,15 +2,6 @@ var express = require("express");
 var router = express.Router();
 const db = require("../config/database");
 const knexAdapter = require("casbin-knex-adapter");
-const knex = require("knex")({
-  client: "mysql",
-  connection: {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "casbin_playground"
-  }
-});
 const casbin = require("casbin");
 const authz = require("../utils/authz");
 
